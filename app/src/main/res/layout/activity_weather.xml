@@ -1,12 +1,73 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".WeatherActivity">
+    tools:context=".WeatherActivity"
+    android:weightSum="1"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/zip_label"
+        android:text="@string/zip_label"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zip_label"
+        android:id="@+id/edittext_zipcode"/>
+    <Button
+        android:layout_below="@id/edittext_zipcode"
+        android:layout_alignParentRight="true"
+        android:text="@string/search_zip"
+        android:id="@+id/search_zip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_marginTop="35dp"
+        android:id="@+id/partition_string"
+        android:text="or simply load results based on your current location."
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:textColor="#ff000000"
+        android:gravity="center"
+        android:layout_below="@+id/edittext_zipcode"/>
+
+    <Button
+        android:text="@string/load_json"
+        android:layout_below="@+id/partition_string"
+        android:id="@+id/load_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/weather_box"
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:textColor="#fc3c32ff"
+        android:gravity="center"
+        android:layout_below="@+id/load_button"/>
+
+        <ListView
+
+            android:layout_below="@+id/weather_box"
+            android:layout_marginTop="20dp"
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></ListView>
+
+
 
 
 
